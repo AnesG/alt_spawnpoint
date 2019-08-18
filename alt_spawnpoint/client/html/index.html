@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>mtree JS</title>
+  <link rel="stylesheet" href="./index_files/foundation.css">
+<link rel="stylesheet" href="./index_files/style.css">
+</head>
+<body id="body">
+<!-- partial:index.partial.html -->
+
+<!-- This is mtree list -->
+<div class="mtree-demo"><ul class="mtree transit" style="opacity: 1;">
+      <li class="mtree-node mtree-closed" style="opacity: 1; transform: translateY(0px);"><a style="cursor: pointer;">Spawnpunkte</a>
+        <ul class="mtree-level-1" style="overflow: hidden; height: 0px; display: none;">
+          <li onclick="flugHafen()" style="opacity: 1; transform: translateY(0px);"><a>Flughafen</a></li>
+          <li onclick="stadtPark()" style="opacity: 1; transform: translateY(0px);"><a>Stadtpark</a></li>
+          <li onclick="pacificBank()" style="opacity: 1; transform: translateY(0px);"><a>Pacific Standard Bank</a></li>
+         </ul>
+      </li>
+</ul></div>
+<!-- partial -->
+  <script src="./index_files/jquery.min.js.Download"></script>
+<script src="./index_files/jquery.velocity.min.js.Download"></script>
+<script src="./index_files/script.js.Download"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', (e) => {
+    show();
+});
+
+function show() {
+    document.getElementById("body").style.display = "block";
+}
+
+function hide() {
+    document.getElementById("body").style.display = "none";
+}
+
+function flugHafen() {
+    alt.emit('spawnFlug');
+}
+
+function stadtPark() {
+    alt.emit('spawnStad');
+}
+
+function pacificBank() {
+    alt.emit('spawnPaci');
+}
+
+if ('alt' in window) {
+    alt.on('show', show);
+    alt.on('hide', hide);
+}
+</script>
+
+
+</body></html>
